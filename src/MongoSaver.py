@@ -25,7 +25,7 @@ class MongoSaver:
         counters = list()
         for index, row in self.counters_df.iterrows():
             for topic in self.topics:
-                if topic["name"] == row["word"]:
+                if topic["name"] == row["word"] or row["word"] in topic["alias"]:
                     count = dict()
                     count["name"] = row["word"]
                     count["category"] = topic["category"]
