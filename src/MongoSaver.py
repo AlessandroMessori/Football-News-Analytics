@@ -27,7 +27,7 @@ class MongoSaver:
             for topic in self.topics:
                 if topic["name"] == row["word"] or row["word"] in topic["alias"]:
                     count = dict()
-                    count["name"] = row["word"]
+                    count["name"] = topic["name"]
                     count["category"] = topic["category"]
                     count["count"] = row["count"]
                     count["language"] = language
